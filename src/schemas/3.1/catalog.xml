@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+ <uri name="xproc31.rng" uri="rng/xproc31.rng"/>
+ <uri name="xproc31.rnc" uri="rnc/xproc31.rnc"/>
+</catalog>

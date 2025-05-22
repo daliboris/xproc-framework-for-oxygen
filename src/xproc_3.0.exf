@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+The file must be saved inside a framework directory, the same place where a *.framework file should sit.
+
+To generate a *.framework file out of the script, you need to use the "Compile Framework Extension script" action 
+from the contextual menu. 
+
+Open the teilex0.exf file in the Text mode, right click in the editor and choose "Compile Framework Extension script" item.
+-->
+<script xmlns="http://www.oxygenxml.com/ns/framework/extend"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/framework/extend http://www.oxygenxml.com/ns/framework/extend/frameworkExtensionScript.xsd">
+  <name>XProc 3.0/3.1 Tools</name>
+  <description>oXygen XML Editor framework for XProc 3.0/3.1 developer</description>
+  <priority>High</priority>
+
+  <associationRules>
+    <addRule namespace="http://www.w3.org/ns/xproc" rootElementLocalName="declare-step" fileName="*" publicID="*" javaRuleClass=""
+     attributeLocalName="version" attributeNamespace="*" attributeValue="3.0"/>
+    <addRule namespace="http://www.w3.org/ns/xproc" rootElementLocalName="library" fileName="*" publicID="*" javaRuleClass=""
+      attributeLocalName="version" attributeNamespace="*" attributeValue="3.0"/>
+    <addRule namespace="http://www.w3.org/ns/xproc" rootElementLocalName="declare-step" fileName="*" publicID="*" javaRuleClass=""
+      attributeLocalName="version" attributeNamespace="*" attributeValue="3.1"/>
+    <addRule namespace="http://www.w3.org/ns/xproc" rootElementLocalName="library" fileName="*" publicID="*" javaRuleClass=""
+      attributeLocalName="version" attributeNamespace="*" attributeValue="3.1"/>
+  </associationRules>
+
+
+ <xmlCatalogs>
+  <addEntry path="${framework}/catalog.xml"/>
+ </xmlCatalogs>
+ 
+  <documentTemplates>
+    <addEntry path="${frameworkDir}/templates"/>
+  </documentTemplates>
+  
+  <classpath>
+    <addEntry path="${framework}/resources"/>
+   <addEntry path="${framework}/i18n"/>
+  </classpath>
+
+  <defaultSchema schemaType="rng" href="${framework}/schemas/3.1/rng/xproc31.rng"/>
+
+  <author>
+    <css selectMultipleAlternateCSS="false">
+      <addCss path="${framework}/css/xproc.css" title="Default" alternate="false" />
+    </css>
+   
+   <!--<css selectMultipleAlternateCSS="true">
+    <addCss path="${framework}/css/body.less" title="Body" alternate="false" />
+    <addCss path="${framework}/css/header.less" title="TEI Header" alternate="false"/>
+    <addCss path="${framework}/css/print.less" title="Print" alternate="false" />
+    <addCss path="${framework}/css/inline.less" title="+ Inline sense" alternate="true" />
+    <addCss path="${framework}/css/colors.less" title="+ Colors" alternate="true" />
+   </css>-->
+    <!-- 
+      Author Actions are loaded from these directories:
+      {framework_directory}/externalAuthorActions
+      {framework_directory}/{framework_file_name}_externalAuthorActions
+      
+      https://www.oxygenxml.com/doc/versions/22.1/ug-editor/topics/dg-create-custom-actions.html#dg-create-custom-actions__section_2
+    -->
+    <!-- 
+    <toolbars>
+      <toolbar>
+        <separator/>
+        <addAction id="insert.entry"/>
+      </toolbar>
+
+    </toolbars>
+
+    <contextualMenu>
+     <submenu name="${i18n(submenu.entry)}">
+        <addAction id="insert.entry"/>
+      </submenu>
+    </contextualMenu>
+
+    <contentCompletion>
+      <authorActions>
+       <addAction id="insert.entry" replacedElement="entry" inCCWindow="true"/>
+      </authorActions>
+    </contentCompletion>
+     -->
+  </author>
+
+ <transformationScenarios>
+  <addScenarios href="resources/transformation.scenarios"/>
+   <defaultScenarios>
+     <name>XProc 3.1 ANT (Morgana)</name>
+   </defaultScenarios>
+ </transformationScenarios>
+ 
+ <validationScenarios>
+  <addScenarios href="resources/validation.scenarios"/>
+   <defaultScenarios>
+     <name>XProc 3.1 RNG</name>
+   </defaultScenarios>
+ </validationScenarios>
+
+</script>

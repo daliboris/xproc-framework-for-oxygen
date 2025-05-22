@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  AUTOMATICALLY GENERATED CONTENT FROM 'src/translation_frameworks.xml'
+--><translation>
+ <languageList>
+  <language description="English" lang="en_US"/>
+  <language description="German" lang="de_DE"/>
+  <language description="French" lang="fr_FR"/>
+  <language description="Dutch" lang="nl_NL"/>
+ </languageList>
+
+ <key type="action" value="insert.entry">
+  
+  <comment>Insert dictionary entry action name.</comment>
+  <val lang="en_US">Insert dictionary entry.</val>
+  <val lang="de_DE">[dictionary entry] einfügen</val>
+  <val lang="fr_FR">Insérer [dictionary entry]</val>  
+  <val lang="nl_NL">[dictionary entry] invoegen</val>
+
+ </key>
+ 
+ <key value="insert.entry_description">
+  <comment>Description of the dictionary entry.</comment>
+  <val lang="en_US">Insert dictionary entry with basic structure in the document.</val>
+ </key>
+ 
+ <key value="submenu.entry">
+  <comment>Dictionary entry in the submenu.</comment>
+  <val lang="en_US">Dictionary entry</val>
+ </key>
+</translation>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="xproc" default="run-morgana" xmlns:if="ant:if">
+  <available file="${statics}" property="is.statics.present"/> 
+  <available file="${configuration}" property="is.configuration.present"/>
+  
+  <!-- OS detection -->
+  <property environment="env"/>
+  <condition property="is.windows">
+    <os family="windows"/>
+  </condition>
+  <condition property="is.unix">
+    <os family="unix"/>
+  </condition>
+  
+  <target name="run-morgana" depends="run-morgana-windows, run-morgana-unix"/>
+  <target name="run-morgana-debug" depends="run-morgana-windows-debug, run-morgana-unix-debug"/>
+  <target name="run-morgana-analysis" depends="run-morgana-windows-analysis, run-morgana-unix-analysis"/>
+  
+  <target name="run-morgana-windows" if="is.windows">
+   <!-- 
+    TODO: deal with not existing files or input
+    -->
+  <echo>Running: ${xpf} with: statics = ${statics}</echo>
+  <exec executable="cmd.exe">
+    <arg value="/c"/>
+    <arg value="Morgana.bat"/>
+    <arg value="-config=file:/D:/Programy/XML/Morgana/config.xml" />
+    <arg value="${xpf}"/>
+    <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+    <arg value="-xquery-connector=Saxon12-3"/>
+    <arg value="-xslt-connector=Saxon12-3"/>
+    <arg value="schematron-connector=SchXSLT" />
+  </exec>
+</target>
+  <target name="run-morgana-windows-debug">
+  <echo>Running [DEBUG]: ${xpf} with: statics = ${statics}</echo>
+  <exec executable="cmd.exe">
+    <arg value="/c"/>
+    <arg value="Morgana.bat"/>
+    <arg value="${xpf}"/>
+    <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+    <arg value="-xquery-connector=Saxon12-3"/>
+    <arg value="-xslt-connector=Saxon12-3"/>
+    <arg value="schematron-connector=SchXSLT" />
+    <arg value="-debug"/>
+  </exec>
+</target>
+
+  <target name="run-morgana-windows-analysis">
+    <echo>Running [ANALYSIS]: ${xpf} with: statics = ${statics}</echo>
+    <exec executable="cmd.exe">
+      <arg value="/c"/>
+      <arg value="Morgana.bat"/>
+      <arg value="${xpf}"/>
+      <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+      <arg value="-xquery-connector=Saxon12-3"/>
+      <arg value="-xslt-connector=Saxon12-3"/>
+      <arg value="schematron-connector=SchXSLT" />
+      <arg value="-not-run"/>
+    </exec>
+  </target>
+  
+
+  <target name="run-morgana-unix" if="is.unix">
+    <exec executable="sh">
+      <arg value="Morgana.sh"/>
+      <arg value="-config=file:/Users/Shared/Morgana/config.xml"/>
+      <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+      <arg value="${xpf}"/>
+      <arg value="-xquery-connector=Saxon12-3"/>
+      <arg value="-xslt-connector=Saxon12-3"/>
+      <arg value="schematron-connector=SchXSLT" />
+    </exec>
+  </target>
+  
+  <target name="run-morgana-unix-debug" if="is.unix">
+    <echo>Running [DEBUG]: ${xpf} with: statics = ${statics}</echo>
+    <exec executable="sh">
+      <arg value="Morgana.sh"/>
+      <arg value="-config=file:/Users/Shared/Morgana/config.xml"/>
+      <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+      <arg value="${xpf}"/>
+      <arg value="-xquery-connector=Saxon12-3"/>
+      <arg value="-xslt-connector=Saxon12-3"/>
+      <arg value="schematron-connector=SchXSLT" />
+      <arg value="-debug"/>
+    </exec>
+  </target>
+  
+  <target name="run-morgana-unix-analysis" if="is.unix">
+    <echo>Running [ANALYSIS]: ${xpf} with: statics = ${statics}</echo>
+    <exec executable="sh">
+      <arg value="Morgana.sh"/>
+      <arg value="-config=file:/Users/Shared/Morgana/config.xml"/>
+      <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+      <arg value="${xpf}"/>
+      <arg value="-xquery-connector=Saxon12-3"/>
+      <arg value="-xslt-connector=Saxon12-3"/>
+      <arg value="schematron-connector=SchXSLT" />
+      <arg value="-no-run"/>
+    </exec>
+  </target>
+  
+  
+  <target name="calabash">
+    <!-- 
+    TODO: deal with not existing files or input
+    -->
+    <!--
+      java -jar xmlcalabash-app-3.0.0.jar helloWorld.xpl
+    -->
+    
+    <echo>Running: ${xpf} with: root = ${calabash}</echo>
+    <echo>    version = ${version}; configuration = ${configuration}</echo>
+    <java dir="${calabash}"
+      jar="${calabash}xmlcalabash-app-${version}.jar"
+      fork="true"
+      failonerror="true"
+      maxmemory="2048m">
+      <arg value="--configuration=${configuration}" if:true="${is.configuration.present}"/>
+      <arg value="${xpf}"/>
+    </java>
+  </target>
+  
+</project>
