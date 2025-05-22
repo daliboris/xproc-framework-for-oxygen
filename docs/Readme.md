@@ -1,4 +1,4 @@
-# oXygen XML Editor framework for XProc 3.x developer
+# oXygen XML Editor framework for XProc 3.x users
 
 Add-on for [oXygen XML Editor](https://www.oxygenxml.com/xml_editor.html) with tools for editing and applying [XProc 3.x](https://xproc.org) pipelines.
 
@@ -32,61 +32,61 @@ The installation process of the framework is described in the [documentation](ht
 
 You can also follow these steps:
 
-1. Add URL of this repository to the list of Update Site Add-ons (`Options` > `Prefences` > `Add-ons`).
+- Add URL of this repository to the list of `Update Site Add-ons` (`Options` > `Prefences` > `Add-ons`).
 
 ![alt text](resources/images/xfo-01-add-ons-add-url.png)
 
-1. Click on `Add` button and accept risk warnings.
+- Click on `Add` button and accept risk warnings.
 
 ![alt text](resources/images/xfo-02-update-url-risk.png)
 
-1. Add following URL to the box: `https://daliboris.github.io/xproc-framework-for-oxygen/oxygen-addons.xml`.
+- Add following URL to the box: `https://daliboris.github.io/xproc-framework-for-oxygen/oxygen-addons.xml`.
 
 ![alt text](resources/images/xfo-03-add-url.png)
 
-After that URL for this framework should appear in the list.
+- Click on the `OK` button and URL for this framework should appear in the list.
 
 ![alt text](resources/images/xfo-04-url-added.png)
 
-Install the framework from the help menu: `Help` > `Install new add-ons`.
+- Install the framework from the help menu: `Help` > `Install new add-ons`.
 
 ![alt text](resources/images/xfo-05-install-menu.png)
 
-From the combo box for `Show add-ons from` select URL you entered in previous steps (`https://daliboris.github.io/xproc-framework-for-oxygen/oxygen-addons.xml`).
+- From the combo box for `Show add-ons from` select URL you entered in previous steps (`https://daliboris.github.io/xproc-framework-for-oxygen/oxygen-addons.xml`).
 
 ![alt text](resources/images/xfo-06-install-select-url.png)
 
-In the warning dialog box (ZIP file `https://daliboris.github.io/xproc-framework-for-oxygen/xproc-framework-for-oxygen.zip` is downloaded), click on `Allow`.
+- In the warning dialog box (ZIP file `https://daliboris.github.io/xproc-framework-for-oxygen/xproc-framework-for-oxygen.zip` is downloaded), click on `Allow`.
 
 ![alt text](resources/images/xfo-07-dowload-zip.png)
 
-In the next step you can select the `XProc 3.x Tools` to be installed. Check the box an click on the `Install`.
+- In the next step you can select the `XProc 3.x Tools` to be installed. Check the box an click on the `Install`.
 
 ![alt text](resources/images/xfo-08-check-xproc.png)
 
-Accept all terms of the end user license agreements (GNU 3) and click on `Install` button.
+- Accept all terms of the end user license agreements (GNU 3) and click on `Install` button.
 
 ![alt text](resources/images/xfo-09-accept-next.png)
 
-Or you can switch to the `Signature` tab to see that the framework is not digitally signed.
+- Or you can switch to the `Signature` tab to see that the framework is not digitally signed.
 
 ![alt text](resources/images/xfo-10-install-signature.png)
 
-Before the installation itself, accept the warning about no valid digital signatures.
+- Before the installation itself, accept the warning about no valid digital signatures.
 
 ![alt text](resources/images/xfo-11-continue.png)
 
-The installation ends with the notification that restart of the oXygen XML Framework is required.
+- The installation ends with the notification that restart of the oXygen XML Framework is required.
 
 ![alt text](resources/images/xfo-12-restart.png)
 
-After new start, you can find `XProc 3.x Tools` framework in the list of installed Add-ons (`Options` > `Prefences` > `Document Type Association`)
+- After new start, you can find `XProc 3.x Tools` framework in the list of installed Add-ons (`Options` > `Prefences` > `Document Type Association`)
 
 ![alt text](resources/images/xfo-13-installed-add-on.png)
 
 ## Use
 
 - open XProc 3.0 or 3.1 file
-- on the `Transformation Scnerios` panel click on the red `Play` button
+- on the `Transformation Scenarios` panel click on the red `Play` button
 
 ![alt text](resources/images/xfo-14-apply-scenario.png)
