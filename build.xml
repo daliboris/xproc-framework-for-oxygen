@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="xproc-framework-for-oxygen" default="zip">
+ <property name="project.version" value="0.5.0" />
+ <property name="project.name" value="xproc-framework-for-oxygen" />
+ <property name="build.dir" value="build" />
+ <property name="web.dir" value="get" />
+ <target name="zip">
+  <mkdir dir="${project.name}"/>
+  <copy todir="${project.name}">
+   <fileset dir="./src" includes="**/**"/>
+  </copy>
+  
+  <mkdir dir="${build.dir}" />
+  
+  <zip destfile="${build.dir}/${project.name}.zip">
+   <zipfileset dir=".">
+    <include name="${project.name}/**/**"></include>
+   </zipfileset>
+  </zip>
+  
+  <copy file="${build.dir}/${project.name}.zip"  tofile="${build.dir}/${project.name}-${project.version}.zip" />
+  <copy file="${build.dir}/${project.name}.zip"  tofile="${web.dir}/${project.name}-${project.version}.zip" />
+  <copy file="${build.dir}/${project.name}.zip" todir="${web.dir}" />
+  
+  <delete dir="${project.name}" />
+ </target>
+</project>
