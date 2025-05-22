@@ -11,7 +11,7 @@ Open the teilex0.exf file in the Text mode, right click in the editor and choose
 <script xmlns="http://www.oxygenxml.com/ns/framework/extend"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.oxygenxml.com/ns/framework/extend http://www.oxygenxml.com/ns/framework/extend/frameworkExtensionScript.xsd">
-  <name>XProc 3.0/3.1 Tools</name>
+  <name>XProc 3.x Tools</name>
   <description>oXygen XML Editor framework for XProc 3.0/3.1 developer</description>
   <priority>High</priority>
 
