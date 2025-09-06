@@ -45,7 +45,7 @@
     </p:xslt>
   </p:for-each>
   
-  <p:wrap-sequence wrapper="xan:report" name="report" />
+  <p:wrap-sequence wrapper="xpan:report" name="report" />
   
   <!--<p:store href="../Result/analysis-report.xml"  />-->
   
