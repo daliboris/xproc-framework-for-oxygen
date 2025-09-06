@@ -308,7 +308,7 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}/defs.xml</String>
+												<String>${cfd}${ps}defs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -493,7 +493,7 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}/defs.xml</String>
+												<String>${cfd}${ps}defs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -678,7 +678,7 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}/defs.xml</String>
+												<String>${cfd}${ps}defs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -886,7 +886,7 @@
 												<String/>
 											</field>
 											<field name="value">
-												<String>3.0.0-alpha30</String>
+												<String>3.0.0-beta7</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
