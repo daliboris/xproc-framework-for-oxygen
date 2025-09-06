@@ -4,8 +4,8 @@ Add-on for [oXygen XML Editor](https://www.oxygenxml.com/xml_editor.html) with t
 
 ## Prerequisites
 
-- [Saxon-HE 12.7](https://github.com/Saxonica/Saxon-HE/releases/tag/SaxonHE12-7 "Download SaxonHE12-7J")
-- [MorganaXProc-IIIse 1.6.7](https://sourceforge.net/projects/morganaxproc-iiise/files/MorganaXProc-IIIse-1.6.7/ "Donwload MorganaXProc-IIIse 1.6.7")
+- [Saxon-HE 12.7](https://github.com/Saxonica/Saxon-HE/releases/tag/SaxonHE12-7 "Download SaxonHE12-7J") (or later version)
+- [MorganaXProc-IIIse 1.6.7](https://sourceforge.net/projects/morganaxproc-iiise/files/MorganaXProc-IIIse-1.6.7/ "Donwload MorganaXProc-IIIse 1.6.7") (or later version)
 
 ### Setting up the environment
 
