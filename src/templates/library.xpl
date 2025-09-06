@@ -11,6 +11,11 @@
   </xhtml:section>
  </p:documentation>
  
+ <!-- 
+      ×××××××××××××××××××××××××××
+      ×××××  PIPELINE STEP  ×××××
+      ×××××××××××××××××××××××××××
+ -->
  <p:declare-step type="xf:first-function" name="fist-function">
   <p:documentation>
    <xhtml:section>
@@ -19,24 +24,44 @@
    </xhtml:section>
   </p:documentation>
   
-  <!-- INPUT PORTS -->
+  <!--
+   >>>>>>>>>>>>>>>>>
+   >> INPUT PORTS >>
+   >>>>>>>>>>>>>>>>>
+  -->
   <p:input  port="source" primary="true" />
   
-  <!-- OUTPUT PORTS -->
+  <!--
+   <<<<<<<<<<<<<<<<<<
+   << OUTPUT PORTS <<
+   <<<<<<<<<<<<<<<<<<
+  -->
   <p:output port="result" primary="true" />
   
-  <!-- OPTIONS -->
-  <p:option name="debug-path" select="()" as="xs:string?" />
-  <p:option name="base-uri" as="xs:anyURI" select="static-base-uri()"/>
+  <!--
+   +++++++++++++
+   ++ OPTIONS ++
+   +++++++++++++
+  -->
+  <p:option name="debug-path" as="xs:string?" select="()" />
+  <p:option name="base-uri" as="xs:anyURI" select="static-base-uri()" />
   
-  <!-- VARIABLES -->
+  <!--
+   ÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷
+   ÷÷ VARIABLES ÷÷
+   ÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷
+  -->
   <p:variable name="debug" select="$debug-path || '' ne ''" />
   <p:variable name="debug-path-uri" select="resolve-uri($debug-path, $base-uri)" />
   
   
-  <!-- PIPELINE BODY -->
+  <!--
+   *******************
+   ** PIPELINE BODY **
+   *******************
+  -->
   <p:xslt>
-   <p:with-input port="stylesheet" href="../Xslt/?.xsl" />
+   <p:with-input port="stylesheet" href="../xslt/?.xsl" />
    <p:with-option name="parameters" select="map {'parameter' : 'value' }" />
   </p:xslt>
   
