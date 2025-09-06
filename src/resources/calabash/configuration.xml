@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- For details: https://docs.xmlcalabash.com/userguide/current/configuration.html -->
+<cc:xml-calabash xmlns:cc="https://xmlcalabash.com/ns/configuration"
+  verbosity="info"
+  validation-mode="lax"
+  version="1.0">
+  <cc:mimetype content-type="application/xml" extensions="rels"/>
+  <cc:inline trim-whitespace="true"/>
+</cc:xml-calabash>
+

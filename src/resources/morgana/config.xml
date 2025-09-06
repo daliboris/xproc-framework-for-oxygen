@@ -1,0 +1,76 @@
+<!-- This is just a demo on how to do it -->
+<morgana-config xmlns="http://www.xml-project.com/morganaxproc">
+	<!-- Relative paths are resolved by uri of this file -->
+	
+	<path_to_SchXSLT2_transpiler>../SchXslt2/transpile.xsl</path_to_SchXSLT2_transpiler>
+	
+	<!-- possible values: 
+		see https://www.xml-project.com/manual/ch02.html#configuration_s1_1_s2_5
+		schxslt
+		schxslt2 
+		skeleton 
+	-->
+	<schematron-connector>schxslt2</schematron-connector>
+	
+	<!-- possible values:
+		
+		STRICT
+		LAX (default)
+	-->
+	<XSLTValidationMode>STRICT</XSLTValidationMode>
+	
+	
+	<!-- possible values: 
+		see https://www.xml-project.com/manual/ch02.html#configuration_s1_1_s2_2
+		
+		saxon99
+		Saxon10 
+		Saxon11 
+		Saxon12 
+		Saxon12-3
+		jaxp
+	-->
+	<xslt-connector>saxon12-3</xslt-connector>
+	
+	<!-- possible values: 
+		see https://www.xml-project.com/manual/ch02.html#configuration_s1_1_s2_3
+		
+		saxon99
+		Saxon10 
+		Saxon11 
+		Saxon12 
+		Saxon12-3
+	-->
+	<xquery-connector>saxon12-3</xquery-connector>
+	
+	<!-- possible values: 
+		see https://www.xml-project.com/manual/ch02.html#configuration_s1_1_s2_7
+		
+		com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector
+		com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector
+	--> 
+	
+	<ixml-connector>com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector</ixml-connector>
+	
+	<!--
+	For Saxon-EE
+	<xslt-config>saxon-config.xml</xslt-config>
+	-->
+	<!--
+		For MorganaXProc-IIIee (the Extended Edition)
+	<fo-connector>com.xml_project.morganaxproc3.fop2x.ApacheFOP2xConnector</fo-connector>
+	<fo-connector>com.xml_project.fosupport.AHFormatterV65.AHF65Connector</fo-connector>
+	-->
+	
+	<!--
+		For custom mapping between extenstion and media type	
+	<mediatype-mapping>
+		<map file-extension="123" media-type="application/xml" />
+	</mediatype-mapping>
+	-->
+	
+	<mediatype-mapping>
+		<map file-extension="rels" media-type="application/xml" />
+	</mediatype-mapping>
+	
+</morgana-config>
