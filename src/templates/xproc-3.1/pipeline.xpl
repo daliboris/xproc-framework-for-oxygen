@@ -35,7 +35,7 @@
    ++ OPTIONS ++
    +++++++++++++
   -->
-	<p:option name="debug-path" as="xs:string?" select="()" />
+	<p:option name="debug-path" as="xs:anyURI?" select="()" />
 	<p:option name="base-uri" as="xs:anyURI" select="static-base-uri()" />
 	
 	<!--
@@ -43,8 +43,10 @@
    ÷÷ VARIABLES ÷÷
    ÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷
   -->
-	<p:variable name="debug" select="$debug-path || '' ne ''" />
-	<p:variable name="debug-path-uri" select="resolve-uri($debug-path, $base-uri)" />
+	<p:variable name="debug" as="xs:boolean" select="$debug-path || '' ne ''" />
+	<p:variable name="debug-path-uri" as="xs:anyURI?" select="if(empty($debug-path)) 
+		then () 
+		else p:urify($debug-path, $base-uri)" />
 	
 	<!--
    *******************
@@ -62,7 +64,7 @@
 	
 	<xf:first-function debug-path="{$debug-path}" base-uri="{$base-uri}"/>
 		
-	<p:store href="../result/?.xml" serialization="map{'indent' : true()}" message="Storing result to ../result/?.xml" />
+	<p:store href="../result/?.xml" serialization="map{'indent' : true()}" message="   ... storing result to ../result/?.xml" />
 	
 
 </p:declare-step>
