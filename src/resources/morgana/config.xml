@@ -6,7 +6,7 @@
 	
 	<!-- possible values: 
 		see https://www.xml-project.com/manual/ch02.html#configuration_s1_1_s2_5
-		schxslt
+		schxslt (default)
 		schxslt2 
 		skeleton 
 	-->
@@ -24,7 +24,7 @@
 		see https://www.xml-project.com/manual/ch02.html#configuration_s1_1_s2_2
 		
 		saxon99
-		Saxon10 
+		Saxon10 (default)
 		Saxon11 
 		Saxon12 
 		Saxon12-3
@@ -36,7 +36,7 @@
 		see https://www.xml-project.com/manual/ch02.html#configuration_s1_1_s2_3
 		
 		saxon99
-		Saxon10 
+		Saxon10 (default)
 		Saxon11 
 		Saxon12 
 		Saxon12-3
@@ -50,7 +50,8 @@
 		com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector
 	--> 
 	
-	<ixml-connector>com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector</ixml-connector>
+<!--	<ixml-connector>com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector</ixml-connector>-->
+	<ixml-connector>com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector</ixml-connector>
 	
 	<!--
 	For Saxon-EE
@@ -71,6 +72,7 @@
 	
 	<mediatype-mapping>
 		<map file-extension="rels" media-type="application/xml" />
+		<map file-extension="ixml" media-type="text/plain" />
 	</mediatype-mapping>
 	
 </morgana-config>
