@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><serialized xml:space="preserve">
+<?xml version="1.0" encoding="UTF-8"?><serialized version="21.1" xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
@@ -18,7 +18,17 @@
 					<field name="authorExtensionDescriptor">
 						<authorExtension>
 							<field name="cssDescriptors">
-								<cssFile-array><cssFile><field name="href"><String>${framework}/css/xproc.css</String></field><field name="title"><String>Default</String></field><field name="alternate"><Boolean>false</Boolean></field></cssFile></cssFile-array>
+								<cssFile-array><cssFile>
+										<field name="href">
+											<String>${framework(XProc)}/css/xproc.css</String>
+										</field>
+										<field name="title">
+											<String>Default</String>
+										</field>
+										<field name="alternate">
+											<Boolean>false</Boolean>
+										</field>
+									</cssFile><cssFile><field name="href"><String>${baseFramework}/css/xproc.css</String></field><field name="title"><String>Default</String></field><field name="alternate"><Boolean>false</Boolean></field></cssFile></cssFile-array>
 							</field>
 							<field name="mergeCSSsFromDocument">
 								<Boolean>false</Boolean>
@@ -32,13 +42,13 @@
 							<field name="menubarDescriptor">
 								<menu>
 									<field name="label">
-										<String>Menu</String>
+										<String>Author</String>
 									</field>
 									<field name="accessKey">
-										<null/>
+										<String/>
 									</field>
 									<field name="iconPath">
-										<null/>
+										<String/>
 									</field>
 									<field name="menuEntriesDescriptorList">
 										<menuEntry-array/>
@@ -129,7 +139,7 @@
 						</authorExtension>
 					</field>
 					<field name="templatesLocations">
-						<String-array><String>${frameworkDir}/templates</String></String-array>
+						<String-array><String>${frameworkDir}/templates/xproc-3.1</String><String>${frameworkDir}/templates/morganaxprociiise</String><String>${frameworkDir}/templates/test-suite</String></String-array>
 					</field>
 					<field name="xmlCatalogs">
 						<String-array><String>${framework}/catalog.xml</String></String-array>
@@ -273,7 +283,7 @@
 									<String/>
 								</field>
 								<field name="buildFilePath">
-									<String>${frameworkDir}/ant/build.xml</String>
+									<String>${frameworkDir}\ant\build.xml</String>
 								</field>
 								<field name="ditaParams">
 									<list>
@@ -282,10 +292,33 @@
 												<String>xpf</String>
 											</field>
 											<field name="description">
-												<String/>
+												<String>XProc 3.0 pipeline file</String>
 											</field>
 											<field name="value">
 												<String>${cf}</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>configuration</String>
+											</field>
+											<field name="description">
+												<String>Path to the XML file with Moargana configuration.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/config.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -308,7 +341,30 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}${ps}defs.xml</String>
+												<String>${cfdu}/defs.xml</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>catalogs</String>
+											</field>
+											<field name="description">
+												<String>Path to the file with XML catalog.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/catalogs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -458,7 +514,7 @@
 									<String>run-morgana-debug</String>
 								</field>
 								<field name="buildFilePath">
-									<String>${frameworkDir}/ant/build.xml</String>
+									<String>${frameworkDir}\ant\build.xml</String>
 								</field>
 								<field name="ditaParams">
 									<list>
@@ -467,10 +523,33 @@
 												<String>xpf</String>
 											</field>
 											<field name="description">
-												<String/>
+												<String>XProc 3.0 pipeline file</String>
 											</field>
 											<field name="value">
 												<String>${cf}</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>configuration</String>
+											</field>
+											<field name="description">
+												<String>Path to the XML file with Moargana configuration.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/config.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -493,7 +572,30 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}${ps}defs.xml</String>
+												<String>${cfdu}/defs.xml</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>catalogs</String>
+											</field>
+											<field name="description">
+												<String>Path to the file with XML catalog.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/catalogs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -643,7 +745,7 @@
 									<String>run-morgana-analysis</String>
 								</field>
 								<field name="buildFilePath">
-									<String>${frameworkDir}/ant/build.xml</String>
+									<String>${frameworkDir}\ant\build.xml</String>
 								</field>
 								<field name="ditaParams">
 									<list>
@@ -652,10 +754,33 @@
 												<String>xpf</String>
 											</field>
 											<field name="description">
-												<String/>
+												<String>XProc 3.0 pipeline file</String>
 											</field>
 											<field name="value">
 												<String>${cf}</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>configuration</String>
+											</field>
+											<field name="description">
+												<String>Path to the XML file with Moargana configuration.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/config.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -678,7 +803,30 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}${ps}defs.xml</String>
+												<String>${cfdu}/defs.xml</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>catalogs</String>
+											</field>
+											<field name="description">
+												<String>Path to the file with XML catalog.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/catalogs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -828,7 +976,7 @@
 									<String>calabash</String>
 								</field>
 								<field name="buildFilePath">
-									<String>${frameworkDir}/ant/build.xml</String>
+									<String>${frameworkDir}\ant\build.xml</String>
 								</field>
 								<field name="ditaParams">
 									<list>
@@ -837,7 +985,7 @@
 												<String>xpf</String>
 											</field>
 											<field name="description">
-												<String/>
+												<String>XProc 3.0 pipeline file</String>
 											</field>
 											<field name="value">
 												<String>${cf}</String>
@@ -863,7 +1011,7 @@
 												<String>Path to the Calabash main directory</String>
 											</field>
 											<field name="value">
-												<String>D:\Programy\Xml\Calabash\</String>
+												<String/>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -1188,7 +1336,7 @@
 					<field name="textModeExternalObjectInsertionHandler">
 						<null/>
 					</field>
-				<field name="webResources"><String-array/></field></documentTypeDescriptor>
+				<field name="webResources"><String-array><String>${frameworkDir(XProc)}/web</String></String-array></field></documentTypeDescriptor>
 			</documentTypeDescriptor-array>
 		</entry>
 	</serializableOrderedMap>

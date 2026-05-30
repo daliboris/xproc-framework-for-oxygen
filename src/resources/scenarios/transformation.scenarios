@@ -139,7 +139,7 @@
 									<String></String>
 								</field>
 								<field name="buildFilePath">
-									<String>${frameworkDir}/ant/build.xml</String>
+									<String>${frameworkDir}\ant\build.xml</String>
 								</field>
 								<field name="ditaParams">
 									<list>
@@ -148,10 +148,33 @@
 												<String>xpf</String>
 											</field>
 											<field name="description">
-												<String></String>
+												<String>XProc 3.0 pipeline file</String>
 											</field>
 											<field name="value">
 												<String>${cf}</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>configuration</String>
+											</field>
+											<field name="description">
+												<String>Path to the XML file with Moargana configuration.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/config.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -174,7 +197,30 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}${ps}defs.xml</String>
+												<String>${cfdu}/defs.xml</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>catalogs</String>
+											</field>
+											<field name="description">
+												<String>Path to the file with XML catalog.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/catalogs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -325,7 +371,7 @@
 									<String>run-morgana-debug</String>
 								</field>
 								<field name="buildFilePath">
-									<String>${frameworkDir}/ant/build.xml</String>
+									<String>${frameworkDir}\ant\build.xml</String>
 								</field>
 								<field name="ditaParams">
 									<list>
@@ -334,10 +380,33 @@
 												<String>xpf</String>
 											</field>
 											<field name="description">
-												<String></String>
+												<String>XProc 3.0 pipeline file</String>
 											</field>
 											<field name="value">
 												<String>${cf}</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>configuration</String>
+											</field>
+											<field name="description">
+												<String>Path to the XML file with Moargana configuration.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/config.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -360,7 +429,30 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}${ps}defs.xml</String>
+												<String>${cfdu}/defs.xml</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>catalogs</String>
+											</field>
+											<field name="description">
+												<String>Path to the file with XML catalog.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/catalogs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -511,7 +603,7 @@
 									<String>run-morgana-analysis</String>
 								</field>
 								<field name="buildFilePath">
-									<String>${frameworkDir}/ant/build.xml</String>
+									<String>${frameworkDir}\ant\build.xml</String>
 								</field>
 								<field name="ditaParams">
 									<list>
@@ -520,10 +612,33 @@
 												<String>xpf</String>
 											</field>
 											<field name="description">
-												<String></String>
+												<String>XProc 3.0 pipeline file</String>
 											</field>
 											<field name="value">
 												<String>${cf}</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>configuration</String>
+											</field>
+											<field name="description">
+												<String>Path to the XML file with Moargana configuration.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/config.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -546,7 +661,30 @@
 												<String>Path to the XML file with static parameters.</String>
 											</field>
 											<field name="value">
-												<String>${cfd}${ps}defs.xml</String>
+												<String>${cfdu}/defs.xml</String>
+											</field>
+											<field name="defaultValue">
+												<null/>
+											</field>
+											<field name="type">
+												<Integer>5</Integer>
+											</field>
+											<field name="possibleValues">
+												<null/>
+											</field>
+											<field name="possibleValuesDescriptions">
+												<null/>
+											</field>
+										</antParameter>
+										<antParameter>
+											<field name="name">
+												<String>catalogs</String>
+											</field>
+											<field name="description">
+												<String>Path to the file with XML catalog.</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/catalogs.xml</String>
 											</field>
 											<field name="defaultValue">
 												<null/>
@@ -697,7 +835,7 @@
 									<String>calabash</String>
 								</field>
 								<field name="buildFilePath">
-									<String>${frameworkDir}/ant/build.xml</String>
+									<String>${frameworkDir}\ant\build.xml</String>
 								</field>
 								<field name="ditaParams">
 									<list>
@@ -706,7 +844,7 @@
 												<String>xpf</String>
 											</field>
 											<field name="description">
-												<String></String>
+												<String>XProc 3.0 pipeline file</String>
 											</field>
 											<field name="value">
 												<String>${cf}</String>
@@ -732,7 +870,7 @@
 												<String>Path to the Calabash main directory</String>
 											</field>
 											<field name="value">
-												<String>D:\Programy\Xml\Calabash\</String>
+												<String></String>
 											</field>
 											<field name="defaultValue">
 												<null/>

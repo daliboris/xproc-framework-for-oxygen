@@ -6,16 +6,17 @@ The file must be saved inside a framework directory, the same place where a *.fr
 To generate a *.framework file out of the script, you need to use the "Compile Framework Extension script" action 
 from the contextual menu. 
 
-Open the xproc_3.x file in the Text mode, right click in the editor and choose "Compile Framework Extension script" item.
+Open the xproc_3.x.exf file in the Text mode, right click in the editor and choose "Compile Framework Extension script" item.
 -->
 <script xmlns="http://www.oxygenxml.com/ns/framework/extend"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.oxygenxml.com/ns/framework/extend http://www.oxygenxml.com/ns/framework/extend/frameworkExtensionScript.xsd">
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/framework/extend http://www.oxygenxml.com/ns/framework/extend/frameworkExtensionScript.xsd"
+  base="XProc">
   <name>XProc 3.x Tools</name>
   <description>oXygen XML Editor framework for XProc 3.x users</description>
   <priority>High</priority>
 
-  <associationRules>
+  <associationRules inherit="none">
     <addRule namespace="http://www.w3.org/ns/xproc" rootElementLocalName="declare-step" fileName="*" publicID="*" javaRuleClass=""
      attributeLocalName="version" attributeNamespace="*" attributeValue="3.0"/>
     <addRule namespace="http://www.w3.org/ns/xproc" rootElementLocalName="library" fileName="*" publicID="*" javaRuleClass=""
@@ -28,11 +29,13 @@ Open the xproc_3.x file in the Text mode, right click in the editor and choose "
 
 
  <xmlCatalogs>
-  <addEntry path="${framework}/catalog.xml"/>
+  <addEntry path="${framework}/catalog.xml" position="before"/>
  </xmlCatalogs>
  
   <documentTemplates>
-    <addEntry path="${frameworkDir}/templates"/>
+    <addEntry path="${frameworkDir}/templates/xproc-3.1"/>
+    <addEntry path="${frameworkDir}/templates/morganaxprociiise"/>
+    <addEntry path="${frameworkDir}/templates/test-suite"/>
   </documentTemplates>
   
   <classpath>
@@ -44,55 +47,19 @@ Open the xproc_3.x file in the Text mode, right click in the editor and choose "
 
   <author>
     <css selectMultipleAlternateCSS="false">
-      <addCss path="${framework}/css/xproc.css" title="Default" alternate="false" />
+      <addCss path="${baseFramework}/css/xproc.css" title="Default" alternate="false" />
     </css>
-   
-   <!--<css selectMultipleAlternateCSS="true">
-    <addCss path="${framework}/css/body.less" title="Body" alternate="false" />
-    <addCss path="${framework}/css/header.less" title="TEI Header" alternate="false"/>
-    <addCss path="${framework}/css/print.less" title="Print" alternate="false" />
-    <addCss path="${framework}/css/inline.less" title="+ Inline sense" alternate="true" />
-    <addCss path="${framework}/css/colors.less" title="+ Colors" alternate="true" />
-   </css>-->
-    <!-- 
-      Author Actions are loaded from these directories:
-      {framework_directory}/externalAuthorActions
-      {framework_directory}/{framework_file_name}_externalAuthorActions
-      
-      https://www.oxygenxml.com/doc/versions/22.1/ug-editor/topics/dg-create-custom-actions.html#dg-create-custom-actions__section_2
-    -->
-    <!-- 
-    <toolbars>
-      <toolbar>
-        <separator/>
-        <addAction id="insert.entry"/>
-      </toolbar>
-
-    </toolbars>
-
-    <contextualMenu>
-     <submenu name="${i18n(submenu.entry)}">
-        <addAction id="insert.entry"/>
-      </submenu>
-    </contextualMenu>
-
-    <contentCompletion>
-      <authorActions>
-       <addAction id="insert.entry" replacedElement="entry" inCCWindow="true"/>
-      </authorActions>
-    </contentCompletion>
-     -->
   </author>
 
  <transformationScenarios>
-  <addScenarios href="resources/transformation.scenarios"/>
+  <addScenarios href="resources/scenarios/transformation.scenarios"/>
    <defaultScenarios>
      <name>XProc 3.1 ANT (Morgana)</name>
    </defaultScenarios>
  </transformationScenarios>
  
  <validationScenarios>
-  <addScenarios href="resources/validation.scenarios"/>
+   <addScenarios href="resources/scenarios/validation.scenarios"/>
    <defaultScenarios>
      <name>XProc 3.1 RNG</name>
    </defaultScenarios>
