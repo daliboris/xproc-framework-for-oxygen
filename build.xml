@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="xproc-framework-for-oxygen" default="zip">
- <property name="project.version" value="0.6.0" />
+ <property name="project.version" value="0.7.0" />
  <property name="project.name" value="xproc-framework-for-oxygen" />
  <property name="compile.dir" value="${project.name}-${project.version}" />
  <property name="build.dir" value="build" />

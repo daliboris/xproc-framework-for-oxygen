@@ -34,6 +34,12 @@
           <li>scenarios</li>
          </ul>
          <h3>History</h3>
+            <h4>0.7.0</h4>
+            <ul>
+              <li>templates for <a href="https://codeberg.org/XProc/test-suite">XProc 3.0 test suite</a> </li>
+              <li>adding XProc 3.0 schema (for offline processing)</li>
+              <li>project structure clean up</li>
+            </ul>
             <h4>0.6.0</h4>
             <ul>
               <li>MorganaXProc-IIIse config file is part of the framework</li>
