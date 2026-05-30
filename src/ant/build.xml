@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="xproc" default="run-morgana" xmlns:if="ant:if" xmlns:unless="ant:unless">
-  
+  <property name="statics" value="" />
+  <property name="configuration" value="" />
+  <property name="catalogs" value="" />
   <target name="init">
     <available file="${statics}" property="is.statics.present"/>
     <available file="${configuration}" property="is.configuration.present"/>
+    <available file="${catalogs}" property="is.catalogs.present"/>
     
     <!-- OS detection -->
     <property environment="env"/>
@@ -15,17 +18,20 @@
     </condition>    
   </target>
   
-  <target name="run-morgana" depends="init, run-morgana-windows, run-morgana-unix"/>
-  <target name="run-morgana-debug" depends="init, run-morgana-windows-debug, run-morgana-unix-debug"/>
-  <target name="run-morgana-analysis" depends="init, run-morgana-windows-analysis, run-morgana-unix-analysis"/>
+  <target name="run-morgana" depends="init, run-info, run-morgana-windows, run-morgana-unix"/>
+  <target name="run-morgana-debug" depends="init, run-info, run-morgana-windows-debug, run-morgana-unix-debug"/>
+  <target name="run-morgana-analysis" depends="init, run-info, run-morgana-windows-analysis, run-morgana-unix-analysis"/>
+  
+  <target name="run-info" depends="init">
+    <echo>Running: ${xpf}</echo>
+    <echo if:true="${is.windows}">OS: Windows</echo>
+    <echo if:true="${is.linux}">OS: Linux</echo>
+    <echo if:set="${is.statics.present}">statics = ${statics}</echo>
+    <echo if:set="${is.configuration.present}">configuration = ${configuration}</echo>
+    <echo if:set="${is.catalogs.present}">catalogs = ${catalogs}</echo>    
+  </target>
   
   <target name="run-morgana-windows" if="${is.windows}">
-   <!-- 
-    TODO: deal with not existing files or input
-    -->
-    <echo>Running: ${xpf} (on Windows)</echo>
-    <echo if:true="   ${is.statics.present}">statics = ${statics}</echo>
-    <echo if:true="   ${is.configuration.present}">configuration = ${configuration}</echo>
   <exec executable="cmd.exe">
     <arg value="/c"/>
     <arg value="Morgana.bat"/>
@@ -33,14 +39,13 @@
     <arg value="-config=${basedir}/../resources/morgana/config.xml" unless:set="is.configuration.present"/>
     <arg value="${xpf}"/>
     <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+    <arg value="-catalogs=${catalogs}" if:true="${is.catalogs.present}"/>
     <arg value="-indent-errors" />
   </exec>
 </target>
   
   <target name="run-morgana-windows-debug" if="${is.windows}">
-    <echo>Running [DEBUG]: ${xpf} (on Windows)</echo>
-    <echo if:true="   ${is.statics.present}">statics = ${statics}</echo>
-    <echo if:true="   ${is.configuration.present}">configuration = ${configuration}</echo>
+    <echo>Running [DEBUG]</echo>
   <exec executable="cmd.exe">
     <arg value="/c"/>
     <arg value="Morgana.bat"/>
@@ -48,15 +53,17 @@
     <arg value="-config=${basedir}/../resources/morgana/config.xml" unless:set="is.configuration.present"/>
     <arg value="${xpf}"/>
     <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+    <arg value="-catalogs=${catalogs}" if:true="${is.catalogs.present}"/>
     <arg value="-indent-errors" />
     <arg value="-debug"/>
   </exec>
 </target>
 
   <target name="run-morgana-windows-analysis" if="${is.windows}">
-    <echo>Running [ANALYSIS]: ${xpf} (on Windows)</echo>
+    <echo>Running [ANALYSIS]</echo>
     <echo if:true="   ${is.statics.present}">statics = ${statics}</echo>
     <echo if:true="   ${is.configuration.present}">configuration = ${configuration}</echo>
+    <echo if:true="   ${is.catalogs.present}">catalogs = ${catalogs}</echo>
     <exec executable="cmd.exe">
       <arg value="/c"/>
       <arg value="Morgana.bat"/>
@@ -64,6 +71,7 @@
       <arg value="-config=${basedir}/../resources/morgana/config.xml" unless:set="is.configuration.present"/>
       <arg value="${xpf}"/>
       <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+      <arg value="-catalogs=${catalogs}" if:true="${is.catalogs.present}"/>
       <arg value="-indent-errors" />
       <arg value="-not-run"/>
     </exec>
@@ -77,6 +85,7 @@
       <arg value="-config=${basedir}/../resources/morgana/config.xml" unless:set="is.configuration.present"/>
       <arg value="${xpf}"/>
       <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+      <arg value="-catalogs=${catalogs}" if:true="${is.catalogs.present}"/>
       <arg value="-indent-errors" />
     </exec>
   </target>
@@ -89,6 +98,7 @@
       <arg value="-config=${basedir}/../resources/morgana/config.xml" unless:set="is.configuration.present"/>
       <arg value="${xpf}"/>
       <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+      <arg value="-catalogs=${catalogs}" if:true="${is.catalogs.present}"/>
       <arg value="-indent-errors" />
       <arg value="-debug"/>
     </exec>
@@ -102,6 +112,7 @@
       <arg value="-config=${basedir}/../resources/morgana/config.xml" unless:set="is.configuration.present"/>
       <arg value="${xpf}"/>
       <arg value="-statics=${statics}" if:true="${is.statics.present}"/>
+      <arg value="-catalogs=${catalogs}" if:true="${is.catalogs.present}"/>
       <arg value="-indent-errors" />
       <arg value="-no-run"/>
     </exec>
