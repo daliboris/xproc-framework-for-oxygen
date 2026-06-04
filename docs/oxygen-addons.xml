@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
   <xt:extension id="xproc-framework-for-oxygen">
     <xt:location href="xproc-framework-for-oxygen.zip"/>
-        <xt:version>0.6.0</xt:version>
+        <xt:version>0.8.0</xt:version>
         <xt:oxy_version>17.0+</xt:oxy_version>
         <xt:type>framework</xt:type>
         <xt:author>Boris Lehečka</xt:author>
@@ -34,6 +34,11 @@
           <li>scenarios</li>
          </ul>
          <h3>History</h3>
+            <h4>0.8.0</h4>
+            <ul>
+              <li>ANT scenario with MorganaXProc-IIIse via Docker</li>
+              <li>templates for ANT scenario with MorganaXProc-IIIse via Docker</li>
+            </ul>
             <h4>0.7.0</h4>
             <ul>
               <li>templates for <a href="https://codeberg.org/XProc/test-suite">XProc 3.0 test suite</a> </li>
