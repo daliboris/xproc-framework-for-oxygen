@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="xproc" default="run-morgana" xmlns:if="ant:if" xmlns:unless="ant:unless">
+  <loadfile property="morgana.args.list" srcFile="morgana-args.txt">
+    <filterchain>
+      <striplinecomments>
+        <comment value="#"/>
+      </striplinecomments>
+      <suffixlines suffix=" "/>
+      <striplinebreaks/>
+      <tokenfilter>
+        <trim/>
+      </tokenfilter>
+    </filterchain>
+  </loadfile>
+  <loadfile property="morgana.config.list" srcFile="morgana-config.txt">
+    <filterchain>
+      <striplinecomments>
+        <comment value="#"/>
+      </striplinecomments>
+      <suffixlines suffix=" "/>
+      <striplinebreaks/>
+      <tokenfilter>
+        <trim/>
+      </tokenfilter>
+    </filterchain>
+  </loadfile>
+  <loadfile property="morgana.volumes.list" srcFile="morgana-volumes.txt">
+    <filterchain>
+      <striplinecomments>
+        <comment value="#"/>
+      </striplinecomments>
+      <suffixlines suffix=" "/>
+      <striplinebreaks/>
+      <tokenfilter>
+        <trim/>
+      </tokenfilter>
+    </filterchain>
+  </loadfile>
+  
+  <target name="init">
+    <available file="morgana-args.txt" property="is.morgana.args.present"/>
+    <available file="morgana-config.txt" property="is.morgana.config.present"/>
+    <available file="morgana-volumes.txt" property="is.morgana.volumes.present"/>
+    
+    <!-- OS detection -->
+    <property environment="env"/>
+    <condition property="is.windows">
+      <os family="windows"/>
+    </condition>
+    <condition property="is.unix">
+      <os family="unix"/>
+    </condition>    
+  </target>
+  
+  <target name="check-docker-api">
+    <exec executable="docker" failonerror="false" resultproperty="docker.result">
+      <arg value="ps"/>
+    </exec>
+    <condition property="docker.available">
+      <equals arg1="${docker.result}" arg2="0"/>
+    </condition>
+    <echo message="Docker is available: ${docker.available}"/>
+  </target>
+  
+  
+  <target name="run-morgana" depends="init, check-docker-api">
+    <echoproperties  regex="morgana"/>
+    <echoproperties  regex="(xpf|image-tag|cfd|cfne)"/>
+    <exec executable="docker" failonerror="true">
+      <arg value="run"/>
+      <arg value="--rm"/>
+      <!-- volumes -->
+      <arg value="--volume" />
+      <arg value="${cfd}:/data" />
+<!--      <arg line="${morgana.volumes.list}" if:set="${is.morgana.volumes.present}"/>-->
+      <!-- Docker image -->
+      <arg value="${image-tag}"/>
+      <!-- configuration file -->
+      <arg line="${morgana.config.list}" if:set="${is.morgana.config.present}"/>
+      <arg value="${cfne}"/>
+      <arg line="${morgana.args.list}" if:set="${is.morgana.args.present}"/>
+    </exec>
+  </target>
+
+</project>

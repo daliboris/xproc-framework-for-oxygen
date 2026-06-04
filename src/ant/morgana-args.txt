@@ -1,0 +1,8 @@
+# indent errors in output if contains XML
+-indent-errors
+# suppress messages
+-messages=off
+# don't use threads in for-each
+-no-threads
+# don't use timestamps in the console 
+# -no-timestamps
