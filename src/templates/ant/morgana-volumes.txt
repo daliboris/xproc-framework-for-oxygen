@@ -1,0 +1,2 @@
+# local directory mapped to containter's /data directory
+--volume V:\Temp\XProc:/data
